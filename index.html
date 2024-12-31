@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App Of Aditya Singh</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header>
+            <h1>To-Do List App</h1>
+            <div class="mode-toggle" id="mode-toggle" onclick="toggleMode()">
+                <span id="mode-icon">🌞</span>
+            </div>
+        </header>
+
+        <!-- Date and Time -->
+        <div class="date-time">
+            <div>
+                <p id="current-date">Date</p>
+                <p id="current-time">Time</p>
+            </div>
+        </div>
+
+        <!-- Task Input -->
+        <section class="task-input">
+            <input type="text" id="task-title" placeholder="Add a Task...">
+            <textarea id="task-desc" placeholder="Optional Description..."></textarea>
+            <label for="task-priority">Priority of Task:</label>
+            <select id="task-priority">
+                <option value="low">Low Priority</option>
+                <option value="medium">Medium Priority</option>
+                <option value="high">High Priority</option>
+            </select>
+            <button id="add-task" onclick="addTask()">Add Task</button>
+        </section>
+
+        <!-- Task Statistics -->
+        <section class="task-stats">
+            <p>All Tasks: <span id="all-tasks">0</span></p>
+            <p>Active Tasks: <span id="active-tasks">0</span></p>
+            <p>Completed Tasks: <span id="completed-tasks">0</span></p>
+            <button id="clear-completed" onclick="clearCompletedTasks()">Clear Completed Tasks</button>
+        </section>
+
+        <!-- Task List -->
+        <section class="task-list">
+            <h2>Tasks</h2>
+            <input type="text" id="search-task" placeholder="Search tasks..." oninput="searchTasks()">
+            <ul id="tasks"></ul>
+        </section>
+
+        <!-- Voice Assistant -->
+        <section class="voice-assistant">
+            <button id="voice-btn" onclick="activateVoiceAssistant()">🎤 Use Voice Assistant</button>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
